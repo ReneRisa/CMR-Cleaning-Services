@@ -211,10 +211,6 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     margin: 3,
     paddingStart: 6,
-    multiline: 'true',
-    numberOfLines: 1,
-    scrollEnabled: 'true',
-    rows: 1,
   },
   buttonSubmit: {
     color: 'black',
