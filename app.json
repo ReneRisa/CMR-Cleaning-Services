@@ -1,0 +1,31 @@
+{
+  "expo": {
+    "name": "cmr-cleaning-services-",
+    "slug": "snack-6cca200f-0ea5-4906-bb6e-6625d671c06c",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "description": "CMR is a comprehensive and user-friendly mobile application designed to streamline and simplify the process of booking and managing cleaning services. Whether you need a one-time deep cleaning, regular housekeeping, or specialized cleaning for your business, CMR connects you with trusted local cleaning professionals."
+  }
+}
