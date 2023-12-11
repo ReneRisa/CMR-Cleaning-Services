@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -8,11 +8,10 @@ import {
   StyleSheet,
   ImageBackground,
   Dimensions,
-} from 'react-native';
+} from "react-native";
 
-let deviceHeight = Dimensions.get('window').height;
-let deviceWidth = Dimensions.get('window').width;
-
+let deviceHeight = Dimensions.get("window").height;
+let deviceWidth = Dimensions.get("window").width;
 
 const DropdownMenu = ({ options, selectedOption, onSelect }) => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -20,9 +19,10 @@ const DropdownMenu = ({ options, selectedOption, onSelect }) => {
   const toggleModal = () => {
     setModalVisible(!modalVisible);
   };
-  const image = {uri: 'https://codehs.com/uploads/de7165a1772822690de54172961a54f6'};
+  const image = {
+    uri: "https://codehs.com/uploads/de7165a1772822690de54172961a54f6",
+  };
 
-  
   return (
     <View style={styles.dropdownContainer}>
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
@@ -34,7 +34,8 @@ const DropdownMenu = ({ options, selectedOption, onSelect }) => {
           transparent={true}
           animationType="slide"
           visible={modalVisible}
-          onRequestClose={toggleModal}>
+          onRequestClose={toggleModal}
+        >
           <View style={styles.modalContainer}>
             <FlatList
               data={options}
@@ -45,7 +46,8 @@ const DropdownMenu = ({ options, selectedOption, onSelect }) => {
                     onSelect(item);
                     toggleModal();
                   }}
-                  style={styles.modalOption}>
+                  style={styles.modalOption}
+                >
                   <Text style={styles.modalOptionText}>{item}</Text>
                 </TouchableOpacity>
               )}
@@ -59,9 +61,9 @@ const DropdownMenu = ({ options, selectedOption, onSelect }) => {
 
 const styles = StyleSheet.create({
   dropdownContainer: {
-    width: 0.9*(deviceWidth/10),
-    height: 0.3*(deviceHeight/10),
-    backgroundColor: 'white',
+    width: 0.9 * (deviceWidth / 10),
+    height: 0.3 * (deviceHeight / 10),
+    backgroundColor: "white",
   },
   dropdownButton: {
     padding: 10,
@@ -71,38 +73,20 @@ const styles = StyleSheet.create({
   },
   modalContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0.5, 0.5, 0.5, 1.5)',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(0.5, 0.5, 0.5, 1.5)",
   },
   modalOption: {
     padding: 10,
     borderBottomWidth: 1,
-    borderBottomColor: 'gray',
+    borderBottomColor: "gray",
   },
   modalOptionText: {
-    fontSize: deviceHeight/20,
-    color: 'white',
+    fontSize: deviceHeight / 20,
+    color: "white",
   },
 });
 
 // Example usage
-export default function App() {
-  const options = ['Home', 'Services','About Us', 'Our Job','Contact Us'];
-  const [selectedOption, setSelectedOption] = useState(options[0]);
-
-  const handleSelect = (option) => {
-    setSelectedOption(option);
-    alert('This option will take to ' + option + ' section');
-  };
-
-  return (
-    <View style={styles.container}>
-      <DropdownMenu
-        options={options}
-        selectedOption={selectedOption}
-        onSelect={handleSelect}
-      />
-    </View>
-  );
-}
+export default DropdownMenu;

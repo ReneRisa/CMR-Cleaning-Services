@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import {
   AppRegistry,
   ScrollView,
@@ -53,14 +53,6 @@ export default class App extends Component {
             >
               <Text style={styles.paragraphButtonQuote}>Get a Quote</Text>
             </TouchableHighlight>
-          </View>
-
-          <View style={styles.containerServices}>
-            <Service />
-          </View>
-
-          <View>
-            <Form />
           </View>
         </ScrollView>
       </KeyboardAvoidingView>

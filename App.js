@@ -22,18 +22,62 @@ import { Card } from "react-native-paper";
 // or any files within the Snack
 import Home from "./components/HomeComponent/Home";
 import NavBar from "./components/NavBarComponent/NavBar";
+import Form from "./components/FormComponent/FormComponent";
+import Service from "./components/ServiceComponent/ServiceComponent";
 
 let deviceHeight = Dimensions.get("window").height;
 let deviceWidth = Dimensions.get("window").width;
 
 export default function App() {
+  const options = ["Home", "Services", "About Us", "Our Job", "Contact Us"];
+  const [selectedOption, setSelectedOption] = useState(options[0]);
+  const [contactUsPageDisplay, setContactUsPageDisplay] = useState("none");
+  const [servicePageDisplay, setServicePageDisplay] = useState("none");
+  const [aboutUsPageDisplay, setAboutUsPageDisplay] = useState("none");
+  const [ourJobPageDisplay, setOurJobPageDisplay] = useState("none");
+  const [homePageDisplay, setHomePageDisplay] = useState("none?");
+
+  const handleSelect = (option) => {
+    setSelectedOption(option);
+    switch (option) {
+      case "Contact Us":
+        setContactUsPageDisplay("block");
+        setServicePageDisplay("none");
+        setAboutUsPageDisplay("none");
+        setOurJobPageDisplay("none");
+        setHomePageDisplay("block");
+        break;
+      case "Our Job":
+        alert("This option will take to " + option + " section");
+        break;
+      case "About Us":
+        alert("This option will take to " + option + " section");
+        break;
+      case "Services":
+        setServicePageDisplay("block");
+        setContactUsPageDisplay("none");
+        setAboutUsPageDisplay("none");
+        setOurJobPageDisplay("none");
+        setHomePageDisplay("block");
+        break;
+      case "Home":
+        setHomePageDisplay("block");
+        break;
+    }
+  };
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.containerNavBar}>
-        <NavBar />
+        <NavBar
+          options={options}
+          selectedOption={selectedOption}
+          onSelect={handleSelect}
+        />
       </View>
-      <View style={styles.containerHome}>
-        <Home />
+      <View style={{ display: homePageDisplay }}>
+        <View style={styles.containerHome}>
+          <Home />
+        </View>
       </View>
     </SafeAreaView>
   );
