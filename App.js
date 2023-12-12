@@ -9,7 +9,6 @@ import {
 import React, { Component, useState } from "react";
 //import Constants from 'expo-constants';
 // You can import supported modules from npm
-import { Card } from "react-native-paper";
 
 // or any files within the Snack
 import Home from "./components/HomeComponent/Home";

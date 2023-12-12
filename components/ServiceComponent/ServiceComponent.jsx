@@ -11,7 +11,6 @@ import {
   ImageBackground,
   Alert,
   Dimensions,
-  Button,
   TextInput,
   KeyboardAvoidingView,
 } from "react-native";
