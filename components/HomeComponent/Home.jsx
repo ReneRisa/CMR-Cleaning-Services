@@ -31,52 +31,32 @@ export default class App extends Component {
 
   render() {
     return (
-      <KeyboardAvoidingView style={styles.container} behavior="padding">
-        <ScrollView>
-          <View style={styles.containerHeader}>
-            <Text style={styles.title}>CMR Cleaning Services</Text>
-            <Text style={styles.information}>
-              Reliable house cleaning professionals serving the greater Reno
-              area. We provide one of the best cleaning services for home,
-              office, construction sites, and more! We can take on any job at
-              any time. All equipment is included at no extra charge. Please
-              call us today for a FREE ESTIMATE. Se Habla Espanol
-            </Text>
-            <Text style={styles.paragraphCellPhone}>
-              Call Now (775)-507-8158
-            </Text>
+      <View style={styles.containerHeader}>
+        <Text style={styles.title}>CMR Cleaning Services</Text>
+        <Text style={styles.information}>
+          Reliable house cleaning professionals serving the greater Reno area.
+          We provide one of the best cleaning services for home, office,
+          construction sites, and more! We can take on any job at any time. All
+          equipment is included at no extra charge. Please call us today for a
+          FREE ESTIMATE. Se Habla Espanol
+        </Text>
+        <Text style={styles.paragraphCellPhone}>Call Now (775)-507-8158</Text>
 
-            <TouchableHighlight
-              onPress={() => {
-                alert("This button will take you to the contact us form");
-              }}
-            >
-              <Text style={styles.paragraphButtonQuote}>Get a Quote</Text>
-            </TouchableHighlight>
-          </View>
-
-          <View style={styles.containerServices}>
-            <Service />
-          </View>
-
-          <View>
-            <Form />
-          </View>
-        </ScrollView>
-      </KeyboardAvoidingView>
+        <TouchableHighlight
+          onPress={() => {
+            alert("This button will take you to the contact us form");
+          }}
+        >
+          <Text style={styles.paragraphButtonQuote}>Get a Quote</Text>
+        </TouchableHighlight>
+      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    height: deviceHeight,
-    width: deviceWidth,
-    backgroundColor: "white",
-    alignItems: "center",
-  },
   containerHeader: {
-    height: 4.6 * (deviceHeight / 10),
+    height: 5 * (deviceHeight / 10),
     backgroundColor: "white",
     width: 9.6 * (deviceWidth / 10),
     alignItems: "center",

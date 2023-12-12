@@ -81,7 +81,11 @@ export default class Service extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height: 10 * (deviceHeight / 10),
+    backgroundColor: "white",
+    width: deviceWidth,
+    alignItems: "center",
+    justifyContent: "center",
   },
   containerImage: {
     height: 1.4 * (deviceHeight / 10),

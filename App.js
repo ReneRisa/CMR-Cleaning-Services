@@ -22,6 +22,7 @@ import { Card } from "react-native-paper";
 // or any files within the Snack
 import Home from "./components/HomeComponent/Home";
 import NavBar from "./components/NavBarComponent/NavBar";
+import Service from "./components/ServiceComponent/ServiceComponent";
 
 let deviceHeight = Dimensions.get("window").height;
 let deviceWidth = Dimensions.get("window").width;
@@ -29,12 +30,11 @@ let deviceWidth = Dimensions.get("window").width;
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.containerNavBar}>
-        <NavBar />
-      </View>
-      <View style={styles.containerHome}>
+      <NavBar />
+      <ScrollView style={styles.scrollView}>
         <Home />
-      </View>
+        <Service />
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -48,13 +48,9 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     padding: 8,
   },
-  containerNavBar: {
-    height: 0.5 * (deviceHeight / 10),
-    width: 1 * (deviceWidth / 10),
+  scrollView: {
     backgroundColor: "white",
-  },
-  containerHome: {
-    height: 9 * (deviceHeight / 10),
+    height: 15 * deviceHeight,
     width: deviceWidth,
   },
 });
