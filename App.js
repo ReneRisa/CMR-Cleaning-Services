@@ -39,10 +39,18 @@ export default function App() {
         setHomePageDisplay(true);
         break;
       case "Our Job":
-        alert("This option will take to " + option + " section");
+        setOurJobPageDisplay(true);
+        setContactUsPageDisplay(false);
+        setAboutUsPageDisplay(false);
+        setServicePageDisplay(false);
+        setHomePageDisplay(true);
         break;
       case "About Us":
-        alert("This option will take to " + option + " section");
+        setAboutUsPageDisplay(true);
+        setContactUsPageDisplay(false);
+        setOurJobPageDisplay(false);
+        setServicePageDisplay(false);
+        setHomePageDisplay(true);
         break;
       case "Services":
         setServicePageDisplay(true);
@@ -53,6 +61,7 @@ export default function App() {
         break;
       case "Home":
         setHomePageDisplay(true);
+        setServicePageDisplay(true);
         break;
     }
   };

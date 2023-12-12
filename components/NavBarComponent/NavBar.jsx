@@ -88,24 +88,4 @@ const styles = StyleSheet.create({
   },
 });
 
-// Example usage
 export default DropdownMenu;
-/* function App() {
-  const options = ["Home", "Services", "About Us", "Our Job", "Contact Us"];
-  const [selectedOption, setSelectedOption] = useState(options[0]);
-
-  const handleSelect = (option) => {
-    setSelectedOption(option);
-    alert("This option will take to " + option + " section");
-  };
-
-  return (
-    <View style={styles.container}>
-      <DropdownMenu
-        options={options}
-        selectedOption={selectedOption}
-        onSelect={handleSelect}
-      />
-    </View>
-  );
-} */
