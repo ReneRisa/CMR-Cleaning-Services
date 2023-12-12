@@ -16,9 +16,6 @@ import {
   KeyboardAvoidingView,
 } from "react-native";
 
-import Form from "../FormComponent/FormComponent";
-import Service from "../ServiceComponent/ServiceComponent";
-
 let deviceHeight = Dimensions.get("window").height;
 let deviceWidth = Dimensions.get("window").width;
 
@@ -56,7 +53,7 @@ export default class App extends Component {
 
 const styles = StyleSheet.create({
   containerHeader: {
-    height: 5 * (deviceHeight / 10),
+    height: 4.5 * (deviceHeight / 10),
     backgroundColor: "white",
     width: 9.6 * (deviceWidth / 10),
     alignItems: "center",

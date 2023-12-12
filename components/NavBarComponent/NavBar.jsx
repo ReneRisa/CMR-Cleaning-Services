@@ -89,7 +89,8 @@ const styles = StyleSheet.create({
 });
 
 // Example usage
-export default function App() {
+export default DropdownMenu;
+/* function App() {
   const options = ["Home", "Services", "About Us", "Our Job", "Contact Us"];
   const [selectedOption, setSelectedOption] = useState(options[0]);
 
@@ -107,4 +108,4 @@ export default function App() {
       />
     </View>
   );
-}
+} */

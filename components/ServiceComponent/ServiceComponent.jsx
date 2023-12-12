@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
   container: {
     height: 10 * (deviceHeight / 10),
     backgroundColor: "white",
-    width: deviceWidth,
+    width: 9.6 * (deviceWidth / 10),
     alignItems: "center",
     justifyContent: "center",
   },

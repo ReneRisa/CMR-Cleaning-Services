@@ -1,16 +1,8 @@
 import {
-  AppRegistry,
   ScrollView,
   View,
   StatusBar,
-  Image,
-  TouchableHighlight,
-  ImageBackground,
-  Alert,
   Dimensions,
-  Button,
-  TextInput,
-  Text,
   SafeAreaView,
   StyleSheet,
 } from "react-native";
@@ -23,17 +15,59 @@ import { Card } from "react-native-paper";
 import Home from "./components/HomeComponent/Home";
 import NavBar from "./components/NavBarComponent/NavBar";
 import Service from "./components/ServiceComponent/ServiceComponent";
+import Form from "./components/FormComponent/FormComponent";
 
 let deviceHeight = Dimensions.get("window").height;
 let deviceWidth = Dimensions.get("window").width;
 
 export default function App() {
+  const options = ["Home", "Services", "About Us", "Our Job", "Contact Us"];
+  const [selectedOption, setSelectedOption] = useState(options[0]);
+  const [contactUsPageDisplay, setContactUsPageDisplay] = useState(false);
+  const [servicePageDisplay, setServicePageDisplay] = useState(true);
+  const [aboutUsPageDisplay, setAboutUsPageDisplay] = useState(false);
+  const [ourJobPageDisplay, setOurJobPageDisplay] = useState(false);
+  const [homePageDisplay, setHomePageDisplay] = useState(true);
+
+  const handleSelect = (option) => {
+    setSelectedOption(option);
+    switch (option) {
+      case "Contact Us":
+        setContactUsPageDisplay(true);
+        setServicePageDisplay(false);
+        setAboutUsPageDisplay(false);
+        setOurJobPageDisplay(false);
+        setHomePageDisplay(true);
+        break;
+      case "Our Job":
+        alert("This option will take to " + option + " section");
+        break;
+      case "About Us":
+        alert("This option will take to " + option + " section");
+        break;
+      case "Services":
+        setServicePageDisplay(true);
+        setContactUsPageDisplay(false);
+        setAboutUsPageDisplay(false);
+        setOurJobPageDisplay(false);
+        setHomePageDisplay(true);
+        break;
+      case "Home":
+        setHomePageDisplay(true);
+        break;
+    }
+  };
   return (
     <SafeAreaView style={styles.container}>
-      <NavBar />
+      <NavBar
+        options={options}
+        selectedOption={selectedOption}
+        onSelect={handleSelect}
+      />
       <ScrollView style={styles.scrollView}>
-        <Home />
-        <Service />
+        {homePageDisplay ? <Home /> : null}
+        {servicePageDisplay ? <Service /> : null}
+        {contactUsPageDisplay ? <Form /> : null}
       </ScrollView>
     </SafeAreaView>
   );
@@ -50,7 +84,5 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     backgroundColor: "white",
-    height: 15 * deviceHeight,
-    width: deviceWidth,
   },
 });
