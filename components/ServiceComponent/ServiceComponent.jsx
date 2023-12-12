@@ -11,7 +11,6 @@ import {
   ImageBackground,
   Alert,
   Dimensions,
-  Button,
   TextInput,
   KeyboardAvoidingView,
 } from "react-native";
@@ -81,7 +80,11 @@ export default class Service extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height: 10 * (deviceHeight / 10),
+    backgroundColor: "white",
+    width: 9.6 * (deviceWidth / 10),
+    alignItems: "center",
+    justifyContent: "center",
   },
   containerImage: {
     height: 1.4 * (deviceHeight / 10),
