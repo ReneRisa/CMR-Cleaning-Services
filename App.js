@@ -35,7 +35,7 @@ export default function App() {
   const [servicePageDisplay, setServicePageDisplay] = useState("none");
   const [aboutUsPageDisplay, setAboutUsPageDisplay] = useState("none");
   const [ourJobPageDisplay, setOurJobPageDisplay] = useState("none");
-  const [homePageDisplay, setHomePageDisplay] = useState("none?");
+  const [homePageDisplay, setHomePageDisplay] = useState("block");
 
   const handleSelect = (option) => {
     setSelectedOption(option);
@@ -79,6 +79,16 @@ export default function App() {
           <Home />
         </View>
       </View>
+      <View style={{ display: servicePageDisplay }}>
+        <View>
+          <Service />
+        </View>
+      </View>
+      <View style={{ display: contactUsPageDisplay }}>
+        <View>
+          <Form />
+        </View>
+      </View>
     </SafeAreaView>
   );
 }
@@ -88,7 +98,7 @@ const styles = StyleSheet.create({
     paddingTop: StatusBar.currentHeight,
     height: deviceHeight,
     width: deviceWidth,
-    justifyContent: "center",
+    //justifyContent: "center",
     backgroundColor: "white",
     padding: 8,
   },
