@@ -23,6 +23,10 @@ export default class Form extends Component {
     return (
       <View style={styles.containerContact}>
         <Text style={styles.paragraphContact}>Contact Us</Text>
+        <Text style={styles.description}>
+          Have a question or need our cleaning services? Reach out to us using
+          the form below or contact us directly.
+        </Text>
         <View style={styles.containerContactName}>
           <TextInput
             ref={(input) => (this.inputValue = input)}
@@ -58,10 +62,11 @@ export default class Form extends Component {
 
 const styles = StyleSheet.create({
   containerContact: {
-    height: 5 * (deviceHeight / 10),
+    height: 7 * (deviceHeight / 10),
     backgroundColor: "white",
-    width: deviceWidth,
+    width: 9.7 * (deviceWidth / 10),
     alignItems: "center",
+    marginTop: 10,
   },
   containerContactName: {
     flexDirection: "row",
@@ -89,7 +94,7 @@ const styles = StyleSheet.create({
   },
   textInputMessage: {
     height: 2 * (deviceHeight / 10),
-    width: 9.3 * (deviceWidth / 10),
+    width: 9.2 * (deviceWidth / 10),
     borderRadius: 10,
     borderWidth: 0.5,
     margin: 3,
@@ -102,5 +107,13 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 10,
     marginTop: 10,
+  },
+  description: {
+    fontSize: 18,
+    textAlign: "center",
+    justifyContent: "center",
+    marginBottom: 20,
+    marginTop: 20,
+    padding: 10,
   },
 });
