@@ -42,7 +42,7 @@ export default class Service extends Component {
           "https://codehs.com/uploads/f3ee1e5f008fc8d0157a03a439875174",
       },
       {
-        serviceTitle: "Comercial Cleaning Section",
+        serviceTitle: "Commercial Cleaning Section",
         serviceImage:
           "https://codehs.com/uploads/2d86d10df16a428e9094e6276dd1aedd",
       },
