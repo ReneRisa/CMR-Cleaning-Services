@@ -10,9 +10,6 @@ import {
   KeyboardAvoidingView,
 } from "react-native";
 
-let deviceHeight = Dimensions.get("window").height;
-let deviceWidth = Dimensions.get("window").width;
-
 export default class OurJob extends Component {
   render() {
     return (
@@ -23,9 +20,7 @@ export default class OurJob extends Component {
 
             <View style={styles.jobContainer}>
               <Image
-                source={{
-                  uri: "https://codehs.com/uploads/6dd7ebafd42c709f61d2460a7b6620dd",
-                }}
+                source={require("https://codehs.com/uploads/6dd7ebafd42c709f61d2460a7b6620dd")}
                 style={styles.jobImage}
               />
               <Text style={styles.jobTitle}>Bathroom Cleaning</Text>
@@ -37,9 +32,7 @@ export default class OurJob extends Component {
 
             <View style={styles.jobContainer}>
               <Image
-                source={{
-                  uri: "https://codehs.com/uploads/6dd7ebafd42c709f61d2460a7b6620dd",
-                }}
+                source={require("https://codehs.com/uploads/6dd7ebafd42c709f61d2460a7b6620dd")}
                 style={styles.jobImage}
               />
               <Text style={styles.jobTitle}>Kitchen Cleaning</Text>
@@ -51,9 +44,7 @@ export default class OurJob extends Component {
 
             <View style={styles.jobContainer}>
               <Image
-                source={{
-                  uri: "https://codehs.com/uploads/6dd7ebafd42c709f61d2460a7b6620dd",
-                }}
+                source={require("https://codehs.com/uploads/6dd7ebafd42c709f61d2460a7b6620dd")}
                 style={styles.jobImage}
               />
               <Text style={styles.jobTitle}>Living Room Cleaning</Text>
@@ -73,11 +64,7 @@ export default class OurJob extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: 10 * (deviceHeight / 10),
-    backgroundColor: "white",
-    width: 9.6 * (deviceWidth / 10),
-    alignItems: "center",
-    justifyContent: "center",
+    flexGrow: 1,
     padding: 16,
   },
   content: {
@@ -93,8 +80,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   jobImage: {
-    width: 20,
-    height: 15,
+    width: 200,
+    height: 150,
     borderRadius: 8,
     marginBottom: 10,
   },
