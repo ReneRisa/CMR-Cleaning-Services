@@ -13,7 +13,7 @@ export default class AboutUs extends Component {
             <View style={styles.container}>
                 <ImageBackground
                     
-                    style={styles.overlary}
+                    style={styles.background}
                     source={{ uri: 'https://www.prolifttoyota.com/wp-content/uploads/2022/01/Scrubmaster-B120R-Rider-Scrubber-300x300.jpg' }}
                 >
                 
