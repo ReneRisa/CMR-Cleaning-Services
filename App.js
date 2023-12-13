@@ -15,6 +15,7 @@ import Home from "./components/HomeComponent/Home";
 import NavBar from "./components/NavBarComponent/NavBar";
 import Service from "./components/ServiceComponent/ServiceComponent";
 import Form from "./components/FormComponent/FormComponent";
+import About from "./components/AboutComponent/AboutComponent";
 
 let deviceHeight = Dimensions.get("window").height;
 let deviceWidth = Dimensions.get("window").width;
@@ -36,21 +37,21 @@ export default function App() {
         setServicePageDisplay(false);
         setAboutUsPageDisplay(false);
         setOurJobPageDisplay(false);
-        setHomePageDisplay(true);
+        setHomePageDisplay(false);
         break;
       case "Our Job":
         setOurJobPageDisplay(true);
         setContactUsPageDisplay(false);
         setAboutUsPageDisplay(false);
         setServicePageDisplay(false);
-        setHomePageDisplay(true);
+        setHomePageDisplay(false);
         break;
       case "About Us":
         setAboutUsPageDisplay(true);
         setContactUsPageDisplay(false);
         setOurJobPageDisplay(false);
         setServicePageDisplay(false);
-        setHomePageDisplay(true);
+        setHomePageDisplay(false);
         break;
       case "Services":
         setServicePageDisplay(true);
@@ -76,6 +77,7 @@ export default function App() {
         {homePageDisplay ? <Home /> : null}
         {servicePageDisplay ? <Service /> : null}
         {contactUsPageDisplay ? <Form /> : null}
+        {aboutUsPageDisplay ? <About /> : null}
       </ScrollView>
     </SafeAreaView>
   );
