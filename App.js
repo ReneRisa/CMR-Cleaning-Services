@@ -15,6 +15,7 @@ import Home from "./components/HomeComponent/Home";
 import NavBar from "./components/NavBarComponent/NavBar";
 import Service from "./components/ServiceComponent/ServiceComponent";
 import Form from "./components/FormComponent/FormComponent";
+import AboutUsPage from "./components/AboutUsComponent/AboutUsComponent";
 
 let deviceHeight = Dimensions.get("window").height;
 let deviceWidth = Dimensions.get("window").width;
