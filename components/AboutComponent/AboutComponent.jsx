@@ -97,24 +97,24 @@ export default class About extends Component {
 
 const styles = StyleSheet.create({
   containerImage: {
-    height: 8 * (deviceHeight / 10),
+    height: 4.5 * (deviceHeight / 10),
     width: 8.5 * (deviceWidth / 10),
-    marginTop: 1,
+    marginTop: 15,
     marginBottom: 15,
-    flexDirection: "column",
+    flexDirection: "row",
+    flexWrap: "wrap",
     alignItems: "center",
     justifyContent: "center",
   },
   imageContainer: {
-    width: 6 * (deviceWidth / 10),
+    width: 4 * (deviceWidth / 10),
     height: 2 * (deviceHeight / 10),
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 2,
-    marginBottom: 2,
+    margin: 4,
   },
   image: {
-    width: 6 * (deviceWidth / 10),
+    width: 4 * (deviceWidth / 10),
     height: 2 * (deviceHeight / 10),
     borderRadius: 10,
     borderColor: "gray",
@@ -138,11 +138,13 @@ const styles = StyleSheet.create({
   description: {
     fontSize: 16,
     marginBottom: 10,
-    textAlign: "center",
+    textAlign: "justify",
+    padding: 10,
   },
   bulletPoint: {
     fontSize: 16,
     marginBottom: 5,
     marginLeft: 10,
+    textAlign: "justify",
   },
 });

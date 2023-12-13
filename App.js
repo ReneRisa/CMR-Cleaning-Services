@@ -16,6 +16,7 @@ import NavBar from "./components/NavBarComponent/NavBar";
 import Service from "./components/ServiceComponent/ServiceComponent";
 import Form from "./components/FormComponent/FormComponent";
 import OurJob from "./components/OurJobComponent/OurJobComponent";
+import About from "./components/AboutComponent/AboutComponent";
 
 let deviceHeight = Dimensions.get("window").height;
 let deviceWidth = Dimensions.get("window").width;
@@ -81,6 +82,7 @@ export default function App() {
         {servicePageDisplay ? <Service /> : null}
         {contactUsPageDisplay ? <Form /> : null}
         {ourJobPageDisplay ? <OurJob /> : null}
+        {aboutUsPageDisplay ? <About /> : null}
       </ScrollView>
     </SafeAreaView>
   );
