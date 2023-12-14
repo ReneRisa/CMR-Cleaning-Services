@@ -22,7 +22,7 @@ let deviceHeight = Dimensions.get("window").height;
 let deviceWidth = Dimensions.get("window").width;
 
 export default function App() {
-  const options = ["Home", "Services", "About Us", "Our Job", "Contact Us"];
+  const options = ["Home", "About Us", "Our Job", "Contact Us"];
   const [selectedOption, setSelectedOption] = useState(options[0]);
   const [contactUsPageDisplay, setContactUsPageDisplay] = useState(false);
   const [servicePageDisplay, setServicePageDisplay] = useState(true);
@@ -54,13 +54,13 @@ export default function App() {
         setServicePageDisplay(false);
         setHomePageDisplay(false);
         break;
-      case "Services":
+      /* case "Services":
         setServicePageDisplay(true);
         setContactUsPageDisplay(false);
         setAboutUsPageDisplay(false);
         setOurJobPageDisplay(false);
         setHomePageDisplay(true);
-        break;
+        break; */
       case "Home":
         setHomePageDisplay(true);
         setServicePageDisplay(true);
