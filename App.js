@@ -7,21 +7,22 @@ import {
   StyleSheet,
 } from "react-native";
 import React, { Component, useState } from "react";
-//import Constants from 'expo-constants';
-// You can import supported modules from npm
+import { useGetServices } from "./hooks/useServices";
+//import { getServices } from "./components/databaseService";
 
-// or any files within the Snack
 import Home from "./components/HomeComponent/Home";
 import NavBar from "./components/NavBarComponent/NavBar";
 import Service from "./components/ServiceComponent/ServiceComponent";
 import Form from "./components/FormComponent/FormComponent";
 import OurJob from "./components/OurJobComponent/OurJobComponent";
 import About from "./components/AboutComponent/AboutComponent";
+import { get } from "firebase/database";
 
 let deviceHeight = Dimensions.get("window").height;
 let deviceWidth = Dimensions.get("window").width;
 
 export default function App() {
+  // getServices();
   const options = ["Home", "About Us", "Our Job", "Contact Us"];
   const [selectedOption, setSelectedOption] = useState(options[0]);
   const [contactUsPageDisplay, setContactUsPageDisplay] = useState(false);
@@ -29,6 +30,7 @@ export default function App() {
   const [aboutUsPageDisplay, setAboutUsPageDisplay] = useState(false);
   const [ourJobPageDisplay, setOurJobPageDisplay] = useState(false);
   const [homePageDisplay, setHomePageDisplay] = useState(true);
+  const { services } = useGetServices();
 
   const handleSelect = (option) => {
     setSelectedOption(option);
@@ -79,7 +81,7 @@ export default function App() {
       />
       <ScrollView style={styles.scrollView}>
         {homePageDisplay ? <Home /> : null}
-        {servicePageDisplay ? <Service /> : null}
+        {servicePageDisplay ? <Service services={services} /> : null}
         {contactUsPageDisplay ? <Form /> : null}
         {ourJobPageDisplay ? <OurJob /> : null}
         {aboutUsPageDisplay ? <About /> : null}

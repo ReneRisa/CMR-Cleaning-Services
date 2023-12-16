@@ -12,8 +12,6 @@ import {
   Button,
 } from "react-native";
 
-//import ModalComponent from "../ModalComponent/ModalComponent";
-
 let deviceHeight = Dimensions.get("window").height;
 let deviceWidth = Dimensions.get("window").width;
 
@@ -113,7 +111,31 @@ export default class Service extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {this.state.services.map((service, index) => (
+        {this.props.services.map((service, index) => (
+          <View key={index}>
+            <TouchableHighlight
+              onPress={() => {
+                {
+                  this.infoModal(
+                    service.title,
+                    service.modalImage,
+                    service.description,
+                    service.price
+                  );
+                  //this.displayModal();
+                }
+              }}
+            >
+              <Image
+                style={styles.containerImage}
+                source={{
+                  uri: service.image,
+                }}
+              />
+            </TouchableHighlight>
+          </View>
+        ))}
+        {/* {this.state.services.map((service, index) => (
           <View key={index}>
             <TouchableHighlight
               onPress={() => {
@@ -136,7 +158,7 @@ export default class Service extends Component {
               />
             </TouchableHighlight>
           </View>
-        ))}
+        ))} */}
         {this.state.modalDisplay ? (
           <ModalComponent
             displayModal={this.state.modalDisplay}
